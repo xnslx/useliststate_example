@@ -1,0 +1,12 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.Container {
+  max-width: 670px;
+}
+
+.Image {
+  width: 480px;
+  height: auto;
+}
