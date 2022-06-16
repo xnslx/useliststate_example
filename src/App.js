@@ -44,7 +44,16 @@ const data = {
 export default function App() {
   const [favoriteList, setFavoriteList] = useListState([]);
 
-  const toggleHandler = (e, id) => {};
+  const toggleHandler = (id) => {
+    const imageIndex = favoriteList.indexOf(id);
+    if (imageIndex >= 0) {
+      setFavoriteList.remove(0, id);
+    } else {
+      setFavoriteList.append(id);
+    }
+  };
+
+  console.log("favoriteList", favoriteList);
   return (
     <div className="App">
       <div className="Container">
@@ -54,7 +63,7 @@ export default function App() {
               <img src={image.src} alt={image.alt} className="Image" />
               <h4>{image.title}</h4>
               <button onClick={(e) => toggleHandler(image.id)}>
-                {image.favToggle ? "unfavorite" : "favorite"}
+                {favoriteList.includes(image.id) ? "unfavorite" : "favorite"}
               </button>
             </>
           );
