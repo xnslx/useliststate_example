@@ -47,7 +47,7 @@ export default function App() {
   const toggleHandler = (id) => {
     const imageIndex = favoriteList.indexOf(id);
     if (imageIndex >= 0) {
-      setFavoriteList.remove(0, id);
+      setFavoriteList.remove(imageIndex, id);
     } else {
       setFavoriteList.append(id);
     }
